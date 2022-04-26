@@ -6,4 +6,4 @@ run op3 with niapy
 * Run sim/walker.py
 
 ## Demo 
-<img src="sim/docs/niapy_demo.gif" width="80%"/>
+<img src="sim/docs/Niapy_demo.gif" width="80%"/>

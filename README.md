@@ -10,11 +10,11 @@ run op3 with niapy
 
 
 ## run algorithm with OP3
-* `python sim/abc_op3`
-* `python sim/bea_op3`
-* `python sim/de_op3`
-* `python sim/fa_op3`
-* `python sim/fpa_op3`
-* `python sim/ga_op3`
-* `python sim/gwo_op3`
-* `python sim/Pso_op3`
+* Run `python sim/abc_op3`
+* Run `python sim/bea_op3`
+* Run `python sim/de_op3`
+* Run `python sim/fa_op3`
+* Run `python sim/fpa_op3`
+* Run `python sim/ga_op3`
+* Run `python sim/gwo_op3`
+* Run `python sim/Pso_op3`

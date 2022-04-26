@@ -10,4 +10,11 @@ run op3 with niapy
 
 
 ## run algorithm name_OP3
-* algorithm name_OP3
+* /sim/abc_op3
+* /sim/bea_op3
+* /sim/de_op3
+* /sim/fa_op3
+* /sim/fpa_op3
+* /sim/ga_op3
+* /sim/gwo_op3
+* /sim/Pso_op3

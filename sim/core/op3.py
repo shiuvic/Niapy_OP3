@@ -39,7 +39,6 @@ class OP3:
     def __init__(self, fallen_reset=False, sim_speed=1.0):
         self.fallen_reset = fallen_reset
         self.physicsClient = p.connect(p.GUI)  # or p.DIRECT for non-graphical version
-        # p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
         self.sld_sim_speed = p.addUserDebugParameter("sim_speed", 1.0, 1000.0, sim_speed)
         self.bt_rst = p.addUserDebugParameter("reset OP3", 1, 0, 1)
         p.configureDebugVisualizer(p.COV_ENABLE_RGB_BUFFER_PREVIEW, 0)
@@ -56,7 +55,7 @@ class OP3:
         self.targetVel = 0
         self.maxForce = 100
 
-        # self.camera_follow()
+        # self.camera_follow( )
         self.angles = None
         self.update_angle_th()
         self.check_reset_th()
@@ -152,7 +151,6 @@ class OP3:
 
     def _set_joint(self):
         for joint in range(self.numJoints):
-            # print(p.getJointStates(self.robot, joint))
             p.setJointMotorControl(self.robot, joint, p.POSITION_CONTROL, self.targetVel, self.maxForce)
 
     def run(self):
@@ -179,11 +177,11 @@ class OP3:
                 basePos, baseOrientation = p.getBasePositionAndOrientation(self.robot, physicsClientId=self.physicsClient)
 
                 matrix = p.getMatrixFromQuaternion(baseOrientation, physicsClientId=self.physicsClient)
-                tx_vec = np.array([matrix[0], matrix[3], matrix[6]])  # 变换后的x轴
-                tz_vec = np.array([matrix[2], matrix[5], matrix[8]])  # 变换后的z轴
+                tx_vec = np.array([matrix[0], matrix[3], matrix[6]])  # 轉換後的x軸
+                tz_vec = np.array([matrix[2], matrix[5], matrix[8]])  # 轉換後的z軸
 
                 basePos = np.array(basePos)
-                # 摄像头的位置
+                # 鏡頭的位置
                 cameraPos = basePos + BASE_RADIUS * tx_vec + 0.5 * BASE_THICKNESS * tz_vec
                 targetPos = cameraPos + 1 * tx_vec
 
@@ -194,10 +192,10 @@ class OP3:
                     physicsClientId=self.physicsClient
                 )
                 projectionMatrix = p.computeProjectionMatrixFOV(
-                    fov=50.0,  # 摄像头的视线夹角
+                    fov=50.0,  # 鏡頭的視線夾角
                     aspect=1.0,
-                    nearVal=0.01,  # 摄像头焦距下限
-                    farVal=20,  # 摄像头能看上限
+                    nearVal=0.01,  # 鏡頭焦距下限
+                    farVal=20,  # 鏡頭焦距上限
                     physicsClientId=self.physicsClient
                 )
 

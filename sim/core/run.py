@@ -1,6 +1,5 @@
 from walker import Walker
 import time
-import math
 walker = Walker(fallen_reset=True)
 walker.reset_and_start()
 def run(x_vel, y_vel, ang_vel,parameters,walk_offset):

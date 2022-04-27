@@ -135,7 +135,6 @@ class Walker(OP3):
                 continue
             x = float(i) / n
             angles = self.wfunc.get(phrase, x, self.current_velocity)
-            # print(angles)
             self.update_velocity(self.velocity, n)
             self.set_angles(angles)
 
@@ -181,10 +180,8 @@ class Walker(OP3):
     def time__(self):
         def time_th():
             while True:
-                # print(self.stop_count)
                 if(self.stop_count >= 1000):
                     self.reset_and_start()
-                    # time.sleep(1)
                 time.sleep(0.5)
         Thread(target=time_th).start()
 
@@ -211,8 +208,7 @@ if __name__ == "__main__":
 
     walker = Walker(fallen_reset=True)
     time.sleep(1)
-    # walker.reset_and_start()
-
+    walker.reset_and_start()
 
     while True:
         time.sleep(1)

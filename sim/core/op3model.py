@@ -40,12 +40,12 @@ class Griewank(Problem):
             val = sol[i]
 
         parameters = {"swing_scale": 0.0,
-                      "step_scale": sol[1],
-                      "step_offset": sol[2],
+                      "step_scale": sol[0],
+                      "step_offset": sol[1],
                       "ankle_offset": 0.0,
-                      "vx_scale": sol[3],
-                      "vy_scale": sol[4],
-                      "vt_scale": sol[5]}
+                      "vx_scale": sol[2],
+                      "vy_scale": sol[3],
+                      "vt_scale": sol[4]}
         walk_offset = {'hip_pitch': -0.063,
                        'hip_roll': 0.0,
                        'hip_yaw': 0.0,
@@ -95,12 +95,12 @@ class Sphere(Problem):
             val = sol[i]
 
         parameters = {"swing_scale": 0.0,
-                      "step_scale": sol[1],
-                      "step_offset": sol[2],
+                      "step_scale": sol[0],
+                      "step_offset": sol[1],
                       "ankle_offset": 0.0,
-                      "vx_scale": sol[3],
-                      "vy_scale": sol[4],
-                      "vt_scale": sol[5]}
+                      "vx_scale": sol[2],
+                      "vy_scale": sol[3],
+                      "vt_scale": sol[4]}
         walk_offset = {'hip_pitch': -0.063,
                        'hip_roll': 0.0,
                        'hip_yaw': 0.0,

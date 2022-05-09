@@ -13,7 +13,7 @@ from core.op3model import Sphere
 
 # we will run Genetic Algorithm for 5 independent runs
 for i in range(5):
-    task = Task(problem=Sphere(dimension=6), max_evals=10000)
-    algo = GeneticAlgorithm(population_size=100, crossover=uniform_crossover, mutation=uniform_mutation, crossover_rate=0.45, mutation_rate=0.9)
+    task = Task(problem=Sphere(dimension=6), max_iters=40)
+    algo = GeneticAlgorithm(population_size=5, crossover=uniform_crossover, mutation=uniform_mutation, crossover_rate=0.45, mutation_rate=0.9)
     best = algo.run(task=task)
     print('%s -> %s' % (best[0], best[1]))

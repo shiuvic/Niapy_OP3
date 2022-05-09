@@ -12,7 +12,7 @@ from core.op3model import Sphere
 
 # we will run Grey Wolf Optimizer for 5 independent runs
 for i in range(5):
-    task = Task(problem=Sphere(dimension=6), max_evals=10000)
-    algo = GreyWolfOptimizer(population_size=40)
+    task = Task(problem=Sphere(dimension=5), max_iters=40)
+    algo = GreyWolfOptimizer(population_size=5)
     best = algo.run(task)
     print(best)

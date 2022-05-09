@@ -13,7 +13,7 @@ from core.op3model import Griewank
 # we will run ParticleSwarmAlgorithm for 5 independent runs
 algo = ParticleSwarmAlgorithm(population_size=5, min_velocity=-5.0, max_velocity=5.0)
 for i in range(5):
-    task = Task(problem=Griewank(dimension=6), max_evals=10000)
+    task = Task(problem=Griewank(dimension=5), max_iters=40)
     best = algo.run(task=task)
     print('%s -> %f' % (best[0], best[1]))
 print(algo.get_parameters())

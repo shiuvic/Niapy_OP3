@@ -12,7 +12,7 @@ from core.op3model import Sphere
 
 # we will run Artificial Bee Colony Algorithm for 5 independent runs
 for i in range(5):
-    task = Task(problem=Sphere(dimension=10), max_evals=10000)
-    algo = ArtificialBeeColonyAlgorithm(population_size=40, limit=2)
+    task = Task(problem=Sphere(dimension=5), max_iters=40)
+    algo = ArtificialBeeColonyAlgorithm(population_size=5, limit=2)
     best = algo.run(task)
     print('%s -> %s' % (best[0], best[1]))

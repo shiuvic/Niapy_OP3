@@ -12,7 +12,7 @@ from core.op3model import Sphere
 
 # we will run Flower Pollination Algorithm for 5 independent runs
 for i in range(5):
-    task = Task(problem=Sphere(dimension=6), max_evals=10000)
-    algo = FlowerPollinationAlgorithm(population_size=20, p=0.5)
+    task = Task(problem=Sphere(dimension=6), max_iters=40)
+    algo = FlowerPollinationAlgorithm(population_size=5, p=0.5)
     best = algo.run(task=task)
     print(best)
